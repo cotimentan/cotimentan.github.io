@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Deteksi bahasa
 	const lang = detectLang(effectiveDomain, slug, suffix);
-	const id = slug;
-
+	const id = encodeURIComponent(slug);
+	
 	if (!id || !lang) return;
 
 	(function setCanonical() {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	// console.log("Slug/ID:", slug);
 	// console.log("Domain:", effectiveDomain);
 
-
+	
 	const aff_short_key = '_DkhJKeT'; // _oke0LJF
 	const api_url = `https://nde.buytostore.com/i/${effectiveDomain}/${lang}/${id}`;
 
