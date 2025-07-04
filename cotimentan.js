@@ -75,11 +75,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		link.setAttribute('href', canonicalUrl);
 	})();
+	
 	// Gunakan nilai-nilai ini sesuai kebutuhan
-	// console.log("✔️ Deteksi berhasil:");
-	// console.log("Lang:", lang);
-	// console.log("Slug/ID:", slug);
-	// console.log("Domain:", effectiveDomain);
+	console.log("✔️ Deteksi berhasil:");
+	console.log("Lang:", lang);
+	console.log("Slug:", slug);
+	console.log("ID:", id);
+	console.log("Domain:", effectiveDomain);
 
 	
 	const aff_short_key = '_DkhJKeT'; // _oke0LJF
