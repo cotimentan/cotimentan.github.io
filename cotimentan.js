@@ -62,16 +62,26 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Deteksi bahasa
 	const lang = detectLang(effectiveDomain, slug, suffix);
 	const id = slug;
-	
+
 	if (!id || !lang) return;
-	
+
+	(function setCanonical() {
+		const canonicalUrl = `${location.origin}/?${slug}-${suffix}`;
+		let link = document.querySelector("link[rel='canonical']");
+		if (!link) {
+			link = document.createElement('link');
+			link.setAttribute('rel', 'canonical');
+			document.head.appendChild(link);
+		}
+		link.setAttribute('href', canonicalUrl);
+	})();
 	// Gunakan nilai-nilai ini sesuai kebutuhan
 	// console.log("✔️ Deteksi berhasil:");
 	// console.log("Lang:", lang);
 	// console.log("Slug/ID:", slug);
 	// console.log("Domain:", effectiveDomain);
 
-	
+
 	const aff_short_key = '_DkhJKeT'; // _oke0LJF
 	const api_url = `https://nde.buytostore.com/i/${effectiveDomain}/${lang}/${id}`;
 
